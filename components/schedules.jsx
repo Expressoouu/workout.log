@@ -62,12 +62,12 @@ export function Schedules({ data, save, remove }) {
   return (
     <div className="grid items-start gap-3 sm:grid-cols-2 lg:grid-cols-3">
       {data.templates.map((t) => (
-        <Card key={t.id} size="sm">
+        <Card key={t.id} size="sm" className="border-t-2 border-t-chart-1">
           <CardHeader>
             <CardTitle>{t.name}</CardTitle>
             <CardDescription>{t.items.length} exercises</CardDescription>
             <CardAction className="flex gap-1">
-              <Button variant="ghost" size="icon-sm" aria-label={`Edit ${t.name}`} onClick={() => setEditing(structuredClone(t))}><PencilSimpleIcon /></Button>
+              <Button variant="ghost" size="icon-sm" className="text-chart-1" aria-label={`Edit ${t.name}`} onClick={() => setEditing(structuredClone(t))}><PencilSimpleIcon /></Button>
               <Confirm title={`Delete “${t.name}”?`} description="Past workouts are kept." onConfirm={() => remove('templates', t.id)}>
                 <Button variant="ghost" size="icon-sm" aria-label={`Delete ${t.name}`}><TrashIcon /></Button>
               </Confirm>
@@ -78,7 +78,7 @@ export function Schedules({ data, save, remove }) {
               {t.items.map((it, i) => (
                 <li key={i} className="flex justify-between gap-2 text-xs">
                   <span className="truncate">{exName(it.exerciseId)}</span>
-                  <span className="shrink-0 text-muted-foreground tabular-nums">{it.sets}×{it.reps}{it.weight ? ` @ ${it.weight}kg` : ''}</span>
+                  <span className="shrink-0 text-chart-1 tabular-nums">{it.sets}×{it.reps}{it.weight ? ` @ ${it.weight}kg` : ''}</span>
                 </li>
               ))}
             </ul>

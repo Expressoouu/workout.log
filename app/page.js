@@ -44,7 +44,7 @@ export default function Page() {
                 aria-current={tab === id ? 'page' : undefined}
                 className={cn(
                   'relative flex items-center gap-2 px-3 py-3.5 text-xs text-muted-foreground transition-colors hover:text-foreground',
-                  tab === id && 'text-foreground after:absolute after:inset-x-3 after:-bottom-px after:h-0.5 after:bg-chart-1',
+                  tab === id && 'text-chart-1 after:absolute after:inset-x-3 after:-bottom-px after:h-0.5 after:bg-chart-1',
                 )}
               >
                 <Icon className="size-4" weight={tab === id ? 'fill' : 'regular'} />
@@ -71,7 +71,7 @@ export default function Page() {
               aria-current={tab === id ? 'page' : undefined}
               className={cn(
                 'relative flex flex-col items-center gap-1 py-2.5 text-[10px] tracking-widest text-muted-foreground uppercase transition-colors hover:text-foreground',
-                tab === id && 'text-foreground before:absolute before:inset-x-6 before:top-0 before:h-0.5 before:bg-chart-1',
+                tab === id && 'text-chart-1 before:absolute before:inset-x-6 before:top-0 before:h-0.5 before:bg-chart-1',
               )}
             >
               <Icon className="size-5" weight={tab === id ? 'fill' : 'regular'} />
